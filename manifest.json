@@ -1,0 +1,19 @@
+{   "theme_color": "#fc9eb5",
+    "background_color": "#fc9eb5",
+    "description": "MASTROWALL Coordinator",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "images/mwalllogo.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable any"
+        }
+    ],
+    "name": "MASTROWALL Coordinator",
+    "short_name": "MASTROWALL Coordinator",
+    "start_url": "/",
+    "url": "https://coordinator.mastrowall.com/",
+    "manifestUrl": "https://coordinator.mastrowall.com/manifest.json",
+    "lang": ""
+}

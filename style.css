@@ -1,0 +1,213 @@
+body {
+    overflow-x: hidden;
+    min-height: 460px;
+  background-color: #fc9eb5;
+    padding-bottom:85px;
+  }
+
+  /* width */
+  ::-webkit-scrollbar {
+    height: 16px;
+    width: 8px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: white;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #cccccc;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #cccccc;
+  }
+
+  #loader {
+    position: absolute;
+    left: 50%;
+    top: 500px;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    margin: -20px 0 0 -20px;
+    visibility: hidden;
+  }
+
+  @-webkit-keyframes spin {
+    0% {
+      -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  #signInCo {
+    padding: 20px;
+    max-width: 600px;
+    height: 440px;
+  }
+
+  #logCo {
+    background-color: #0c29cd;
+    border: none;
+    padding: 10px 40px;
+    max-width: 600px;
+    width: 98%;
+    border: 1px solid #0c29cd;
+    border-radius: 0px;
+  }
+
+  #logCo:hover {
+    background-color: white;
+    color: #0c29cd;
+    border: 1px solid #0c29cd;
+  }
+
+  label {
+    float: left;
+    margin-left: 6px;
+  }
+
+  .form-control {
+    width: 98%;
+    border-radius: 0px;
+  }
+
+  .form-control:focus {
+    box-shadow: none;
+  }
+
+  #logCo:active,
+  #logCo:focus {
+    -webkit-transform: scale(0.98);
+  transform: scale(0.98);
+  box-shadow: none;
+  }
+  #propic {
+    border-radius: 100%;
+    box-shadow: 0 2px 10px 0 #0c29cd;
+    pointer-events:none;
+    border:4px solid white;
+    background-color:white;
+    min-height:160px;
+  }
+
+  #upDash{
+    background-image: linear-gradient(to top right, #c271f1, white);
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    max-width:90%;
+    padding: 10px;
+  }
+  
+  #footDash {
+    width: 100%;
+    bottom:0px;
+    position:fixed;
+    
+  }
+  #footdashcenter{
+    background-image: linear-gradient(to bottom right, #af0446, white);
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    max-width: 1000px;
+    padding: 10px;
+  }
+  #infoMastrowallCo{
+    padding-top: 6px;
+  }
+  .dashitem{
+    display:inline-block;
+    width: 270px;
+    margin:10px;
+    text-align: center;
+    height:160px;
+    background-color: white;
+    border:1px solid #aaa9a9;
+   cursor: pointer;
+   font-size: 18px;
+  }
+  .dashitem:hover{
+     -webkit-transform: scale(1.06);
+     transform: scale(1.06);
+     background-color: #e4e1e1;
+     box-shadow: 0px 4px 6px 0px #1d1d1d;
+  }
+  #showProfileCo{
+    margin:10px;
+  }
+  .dashimgicon{
+    width: 100%;
+  height:120px;
+  border-bottom: 1px solid #d7d7d8;
+  pointer-events: none;
+  }
+  .svgserviceco{
+    margin:6px;
+  width:24px;
+  height:24px;
+  }
+
+  #resetp{
+display:none;
+top:0px;
+left: 0px;
+position: fixed;
+width: 100%;
+height:100%;
+background-color: #f1aac0;
+opacity: 0.96;
+  }
+
+  .repass{
+    margin-top:200px;
+    max-width: 400px;
+    width:90%;
+    min-height:200px;
+    padding:20px;
+    background-color: #f5caca;
+    box-shadow: 0px 2px 6px 0px #474749;
+  }
+  #resetp_two,#resetp_three,#resetp_four{
+    display:none;
+  }
+
+  #checkemid,#checkemid-2{
+    display: none;
+    max-width: 400px;
+    width:90%;
+    padding:20px;
+    background-color: #256fdf;
+    color:white;
+    z-index: 1;
+  }
+
+  #loader-fp{
+    display: inline-block;
+    left: 50%;
+    top: 500px;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+    margin: -20px 0 0 -20px;
+    visibility: hidden;
+  }
+  #frepass:hover{
+border-bottom: 1px solid #555;
+  }

@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+  <head>
+    <title>Coordinator | MASTROWALL</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Assist Educator for SMART and collaborative learning">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://coordinator.mastrowall.com/">
+<meta property="og:title" content="Coordinator | MASTROWALL">
+<meta property="og:description" content="Assist Educator for SMART and collaborative learning">
+<meta property="og:image" content="images/coordi-index.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://coordinator.mastrowall.com/">
+<meta property="twitter:title" content="Coordinator | MASTROWALL">
+<meta property="twitter:description" content="Assist Educator for SMART and collaborative learning">
+<meta property="twitter:image" content="images/coordi-index.jpg">
+<link rel="stylesheet" href="vendor/style/bootstrap4.5.2.min.css">
+<script src="vendor/js/jquery3.5.1.min.js"></script>
+<script src="vendor/js/popper.1.16.0.min.js"></script>
+<script src="vendor/js/bootstrap.4.5.2.min.js"></script>
+<script src="vendor/js/jquery.3.4.0.min.js"></script>
+<script src="vendor/js/jquery.validate.1.19.0.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+     <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <link rel="icon" href="images/mwalllogo.png" type="image/png" sizes="16x16">
+    <link rel='manifest' href='/manifest.json'>
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+  </head>
+
+  <body>
+    <div align="center">
+      <div id="signInCo" style="padding-top:60px;"><br> <img src="images/coordinator.webp" style="pointer-events:none; width: 140px;">
+        <form onsubmit="inwallCo(); return false;">
+          <div class="form-group"><label for="inputEmail">Email address:</label> <input type="email" class="form-control" id="email" placeholder="Enter email" required /> </div>
+          <div class="from-group"><label for="inputPass">Password:</label> <input type="password" class="form-control" id="pcodeCo" placeholder="Enter password" /> </div><br>
+          <div align="center"> <button type="submit" class="btn btn-primary" id="logCo">Sign In</button> </div>
+        </form>
+        <div style="display:block;"><p style="float:right;padding-left: 10px;padding-top: 6px;"><span id="frepass" style="cursor: pointer;" onclick="$('#resetp').show();">Forgot Credentials?</p></div>
+        <br>
+        <div id="loader" class="spinner-border text-primary"></div><br>
+        <div id="checkP" style="color:red;"></div>
+        <div  style="margin-top:40px;left:0px;width:100%;position: relative;"><p align="center">© M A S T R O W A L L</p></div>
+      </div>
+    </div>
+    <div id="CoDashboard" style="display:none;" align="center">
+      <div id="upDash">
+      <div id="showProfileCo"></div>
+      <hr style="width:60%;border-width:2px;">
+      <div id="showServiceCo">
+        <div class="serviceCo">
+          <div id="educonnect" class="dashitem"> 
+            <img class="dashimgicon" src="images/educon.png">
+            <svg xmlns="http://www.w3.org/2000/svg" class="svgserviceco" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+              <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+              <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
+              <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+            </svg>EduConnect</div>
+          <div id="tconduct" class="dashitem">
+            <img class="dashimgicon" src="images/testcon.png">
+            <svg xmlns="http://www.w3.org/2000/svg" class="svgserviceco" fill="currentColor" class="bi bi-graph-up" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M0 0h1v15h15v1H0V0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5z"/>
+            </svg> Test Conduct</div>
+          <div id="uplinks" class="dashitem">
+            <img class="dashimgicon" src="images/uplink.jpg">
+            <svg xmlns="http://www.w3.org/2000/svg" class="svgserviceco" fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 16 16">
+              <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/>
+              <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/>
+            </svg>UpLinks</div>
+          <div id="otserv" class="dashitem">
+            <img class="dashimgicon" src="images/otserv.jpg">
+            <svg xmlns="http://www.w3.org/2000/svg" class="svgserviceco"  fill="currentColor" class="bi bi-app-indicator" viewBox="0 0 16 16">
+              <path d="M5.5 2A3.5 3.5 0 0 0 2 5.5v5A3.5 3.5 0 0 0 5.5 14h5a3.5 3.5 0 0 0 3.5-3.5V8a.5.5 0 0 1 1 0v2.5a4.5 4.5 0 0 1-4.5 4.5h-5A4.5 4.5 0 0 1 1 10.5v-5A4.5 4.5 0 0 1 5.5 1H8a.5.5 0 0 1 0 1H5.5z"/>
+              <path d="M16 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+            </svg> Other Services</div>
+        </div>
+      </div>
+     
+   <!-- <div id="andservices">
+       <span onclick="opensframe();">&#8226; Search</span>
+          <span onclick="window.open('https://library.mastrowall.in', '_blank', 'location=center,height=570,width=1200,left=80,top=100,scrollbars=yes,status=yes');">&#8226; Library</span>
+          <span onclick="window.open('https://blog.mastrowall.in', '_blank', 'location=center,height=570,width=1200,left=80,top=100,scrollbars=yes,status=yes');"> &#8226; Blog</span>
+          <span onclick="opentframe();"> &#8226; TeleMedia</span>
+          <span onclick="window.open('https://astro.mastrowall.com', '_blank', 'location=center,height=570,width=1200,left=80,top=100,scrollbars=yes,status=yes');"> &#8226; Forum</span>
+        </div>--> 
+      
+    </div> 
+      <hr style="width:60%;border-width:2px;">
+      <div id="footDash" align="center"><div id="footdashcenter"> <button type="button" class="btn btn-light" id="editEduPro"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+            <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" /></svg> Edit Profile Information</button>
+     <!-- <hr style="max-width:400px;">-->  
+        <div id="infoMastrowallCo">|| An Art of Learning ||</div>
+      </div></div>
+    </div>
+    </div>
+
+<section>
+<div id="resetp" align="center">
+<div id="resetp_one" class="repass">
+  <h5 style="text-align: left;">Reset Password</h5><hr>
+<form id="repassone" onsubmit="return false;">
+  <input type="email" class="form-control" placeholder="Enter registered email" id="mailrepass" required/><br/>
+  <input type="submit" class="btn btn-outline-dark" value="Continue >>"/>
+  <input type="button" class="btn btn-secondary" value="Close"  onclick="$('#resetp').hide();">
+ 
+</form>
+</div>
+<div id="resetp_two"class="repass">
+  <h5 style="text-align: left;">Reset Password</h5><hr>
+  <form id="repasstwo" onsubmit="return false;">
+    <input type="text" class="form-control" placeholder="Verification Code" id="vercode" oninput="verfycode();" required/><br/>
+    <input type="submit" class="btn btn-outline-dark" id="verconfirm" value="Continue >>" onclick="$('#resetp_two').hide();$('#resetp_three').show();" disabled/>
+    <input type="button" class="btn btn-secondary" value="Close"  onclick="$('#resetp').hide();">
+  </form>
+
+</div>
+<div id="resetp_three"class="repass">
+  <h5 style="text-align: left;">Reset Password</h5><hr>
+  <form id="repassthree" onsubmit="return false;">
+    <input type="password" class="form-control" placeholder="New Password" id="passwordnew" required/><br/>
+    <span id="messagenew" style="float:right;margin-right:10px; color:red;"></span>
+    <input type="password" class="form-control" placeholder="Confirm Password Code" id="confirm_passwordnew" required/><br/>
+    <input type="submit" class="btn btn-outline-dark" id="repassconfirm" value="Change Password" disabled/>
+    <input type="button" class="btn btn-secondary" value="Close"  onclick="$('#resetp').hide();">
+  </form>
+</div>
+<div id="resetp_four"class="repass">
+  <div style="color:#50800a;"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
+    <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+    <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+  </svg></div><br>
+  <h4 style="color:#50800a;">Password Changed</h4><br>
+  <button class="btn btn-outline-dark" style="padding:6px 40px;" onclick="location.reload();">Sign In</button>
+</div>
+<br><div id="checkemid"></div><div id="checkemid-2"></div>
+        <div id="loader-fp" class="spinner-border text-secondary"></div><br>
+         <input id="vercodepre" style="display: none;"/>
+</div>
+  </section>
+
+    <script  src="js/co-one.js"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js');
+      } else {
+        console.log("Service worker is not supported");
+      }
+
+    </script>
+  </body>
+
+</html>
