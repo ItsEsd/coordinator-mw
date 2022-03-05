@@ -34,7 +34,7 @@
   <body>
     <div align="center">
       <div id="signInCo" style="padding-top:60px;"><br> <img src="images/coordinator.webp" style="pointer-events:none; width: 140px;">
-        <form onsubmit="inwallCo(); return false;">
+        <form onsubmit="inwallCo();" target="hdnfrm">
           <div class="form-group"><label for="inputEmail">Email address:</label> <input type="email" class="form-control" id="email" placeholder="Enter email" required /> </div>
           <div class="from-group"><label for="inputPass">Password:</label> <input type="password" class="form-control" id="pcodeCo" placeholder="Enter password" /> </div><br>
           <div align="center"> <button type="submit" class="btn btn-primary" id="logCo">Sign In</button> </div>
@@ -102,7 +102,7 @@
 <div id="resetp" align="center">
 <div id="resetp_one" class="repass">
   <h5 style="text-align: left;">Reset Password</h5><hr>
-<form id="repassone" onsubmit="return false;">
+<form id="repassone" target="hdnfrm">
   <input type="email" class="form-control" placeholder="Enter registered email" id="mailrepass" required/><br/>
   <input type="submit" class="btn btn-outline-dark" value="Continue >>"/>
   <input type="button" class="btn btn-secondary" value="Close"  onclick="$('#resetp').hide();">
@@ -111,7 +111,7 @@
 </div>
 <div id="resetp_two"class="repass">
   <h5 style="text-align: left;">Reset Password</h5><hr>
-  <form id="repasstwo" onsubmit="return false;">
+  <form id="repasstwo" target="hdnfrm">
     <input type="text" class="form-control" placeholder="Verification Code" id="vercode" oninput="verfycode();" required/><br/>
     <input type="submit" class="btn btn-outline-dark" id="verconfirm" value="Continue >>" onclick="$('#resetp_two').hide();$('#resetp_three').show();" disabled/>
     <input type="button" class="btn btn-secondary" value="Close"  onclick="$('#resetp').hide();">
@@ -120,7 +120,7 @@
 </div>
 <div id="resetp_three"class="repass">
   <h5 style="text-align: left;">Reset Password</h5><hr>
-  <form id="repassthree" onsubmit="return false;">
+  <form id="repassthree" target="hdnfrm">
     <input type="password" class="form-control" placeholder="New Password" id="passwordnew" required/><br/>
     <span id="messagenew" style="float:right;margin-right:10px; color:red;"></span>
     <input type="password" class="form-control" placeholder="Confirm Password Code" id="confirm_passwordnew" required/><br/>
@@ -141,7 +141,7 @@
          <input id="vercodepre" style="display: none;"/>
 </div>
   </section>
-
+<iframe name="hdnfrm" id="hdnfrm" style="display:none;"></iframe>
     <script  src="js/co-one.js"></script>
     <script>
       if ('serviceWorker' in navigator) {
